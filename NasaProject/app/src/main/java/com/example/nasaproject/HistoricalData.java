@@ -2,7 +2,6 @@ package com.example.nasaproject;
 
 import android.graphics.Bitmap;
 import android.util.Log;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -10,6 +9,9 @@ import java.io.FileReader;
 import java.io.PrintWriter;
 import java.text.DecimalFormat;
 
+/**
+ * Helper class to store average data about specific latitude and longitude
+ */
 public class HistoricalData {
     private double latitude;
     private double longitude;
@@ -26,7 +28,8 @@ public class HistoricalData {
         index = ind;
     }
 
-    //Writes to output file in specific format
+    //Writes Lat,Lon, Stdev, index to .txt file in specific format
+    //Saves Average Data bitmap to .jpeg of local files
     public void writeToFile(String fileDirectory, int index) {
         String filename = fileDirectory + "/HistoricalData.txt";
         String imagepath = fileDirectory + "/DataBitmap" + index + ".jpg";
